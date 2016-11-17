@@ -1,0 +1,9 @@
+{
+  "youtubeFolder" : "/Volumes/5tb/Youtube",
+  "downloadArchiveLocation" : "default",
+  "downloadArchiveName" : "downloaded.txt",
+  "showWarnings" : false,
+  "showErrors" : true,
+  "showSignInErrors" : false,
+  "showCopyrightErrors" : false
+}
