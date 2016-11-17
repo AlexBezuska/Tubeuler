@@ -9,7 +9,8 @@ if (!config.downloadArchiveLocation === "default"){
   downloadArchive = path.join(config.downloadArchiveLocation, config.downloadArchiveName);
 }
 
-var streamcount = 0;
+var streamCount = 0;
+var videoCount = 0;
 
 if (!fs.existsSync(config.youtubeFolder)){
   fs.mkdirSync(config.youtubeFolder);
@@ -18,13 +19,13 @@ if (!fs.existsSync(config.youtubeFolder)){
 function getDataArg(source) {
   switch(source.type){
     case "video":
-      return "https://www.youtube.com/watch?v=" + source.data;
+      return "https://www.youtube.com/watch?v=" + source.id;
     case "playlist":
-      return "https://www.youtube.com/playlist?list=" + source.data;
+      return "https://www.youtube.com/playlist?list=" + source.id;
     case "channel":
-      return "ytuser:" + source.data;
+      return "ytuser:" + source.id;
     case "channelId":
-      return "https://www.youtube.com/channel/" + source.data + "/videos";
+      return "https://www.youtube.com/channel/" + source.id + "/videos";
   }
 }
 
@@ -33,9 +34,8 @@ var spawn = require('child_process').spawn;
 for (var i = 0; i < sources.length; i++) {
 
   var source = sources[i];
-    console.log("Starting stream for adding media to:", source.folder, "...");
-    streamcount++;
-    console.log("Streams Open:", streamcount);
+  streamCount++;
+  console.log("Starting stream[" + streamCount + "] for adding media to:", source.folder, "...");
   var sourceFolder = path.join(config.youtubeFolder, source.folder);
 
   var args = [
@@ -64,7 +64,16 @@ for (var i = 0; i < sources.length; i++) {
   //console.log (args);
   var youtubeDl = spawn('youtube-dl', args);
   youtubeDl.stdout.on('data', function (buffer) {
-    //console.log(buffer.toString())
+    var bufferString = buffer.toString();
+    if (bufferString.indexOf("[download] Downloading video ") > -1) {
+      //console.log(bufferString);
+    } else if (bufferString.indexOf("Merging formats") > -1) {
+      videoCount++;
+      console.log("\n New content saved!", bufferString.split("\"")[1].split(config.youtubeFolder)[1]);
+      //console.log(bufferString);
+    }
+    //console.log(bufferString);
+
   });
   youtubeDl.stderr.on('data', function (buffer) {
     var bufferString = buffer.toString();
@@ -93,13 +102,12 @@ for (var i = 0; i < sources.length; i++) {
   });
   youtubeDl.on('close', function (code) {
     var streamName = filter(this.spawnargs, '/')[0].split("/%")[0].replace(config.youtubeFolder + "/", "");
+    streamCount--;
     if (code === 0) {
-      console.log(streamName, 'stream closed - Finished successfully!');
+      console.log(streamName, 'stream[' + streamCount + '] closed - Synced with YouTube!');
     } else {
-      console.log(streamName, 'stream closed - There was an error...');
+      console.log(streamName, 'stream[' + streamCount + '] closed - There was an error...');
     }
-    streamcount--;
-    console.log("Streams Open:", streamcount);
   });
 
 }

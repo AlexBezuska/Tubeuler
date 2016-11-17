@@ -1,24 +1,25 @@
 [
   {
-		"type": "channel",
-		"data": "squirrel2048",
-		"matchTitle": "nuts",
-		"folder": "All of squirrel2048's vids"
-	},
+    "type": "channel",
+    "id": "squirrel2048",
+    "matchTitle": "nuts",
+    "folder": "All of squirrel2048's vids"
+  },
   {
-		"type": "channelID",
-		"data": "UC---------------------",
-		"folder": "Tiger Boy in The Woods"
-	},
+    "type": "channelID",
+    "id": "UC---------------------",
+    "folder": "Tiger Boy in The Woods"
+  },
   {
     "type": "playlist",
-    "data": "PL---------------------",
+    "id": "PL---------------------",
     "folder": "90 Jeff Goldblum Videos"
   },
   {
     "type": "playlist",
     "format": "mp3",
-    "data": "PL---------------------",
+    "id": "PL---------------------",
     "folder": "90 Jeff Goldblum Videos(just the audio please)"
-  },
+  }
 ]
+

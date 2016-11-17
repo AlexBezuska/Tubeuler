@@ -1,4 +1,11 @@
+## Prerequisites
 
+* You must have (youtube-dl)[https://rg3.github.io/youtube-dl/download.html] installed on your system and have the `youtube-dl` command available from your terminal.
+
+## To run
+
+* Be sure to have at least one video, channel, or playlist in your download-list.json
+* From the root directory of this project run `npm start`
 
 ## Settings in `config.json`
 
