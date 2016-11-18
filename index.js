@@ -69,7 +69,7 @@ for (var i = 0; i < sources.length; i++) {
       //console.log(bufferString);
     } else if (bufferString.indexOf("Merging formats") > -1) {
       videoCount++;
-      console.log("\n New content saved!", bufferString.split("\"")[1].split(config.youtubeFolder)[1]);
+      console.log("New content saved!\n ", bufferString.split("\"")[1].split(config.youtubeFolder)[1]);
       //console.log(bufferString);
     }
     //console.log(bufferString);
