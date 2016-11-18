@@ -6,7 +6,7 @@ Huge thanks to [Ben WIley](https://github.com/benwiley4000) who got me started o
 
 ## Prerequisites
 
-* You must have (youtube-dl)[https://rg3.github.io/youtube-dl/download.html] installed on your system and have the `youtube-dl` command available from your terminal.
+* You must have [youtube-dl](https://rg3.github.io/youtube-dl/download.html) installed on your system and have the `youtube-dl` command available from your terminal.
 
 ## To run
 
