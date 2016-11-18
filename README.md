@@ -2,6 +2,8 @@
 
 ### Making youtube-dl a little friendlier with Node and JSON
 
+Huge thanks to [Ben WIley](https://github.com/benwiley4000) who got me started on this project, we pair programmed for the majority of the code in the initial version of this project.
+
 ## Prerequisites
 
 * You must have (youtube-dl)[https://rg3.github.io/youtube-dl/download.html] installed on your system and have the `youtube-dl` command available from your terminal.
