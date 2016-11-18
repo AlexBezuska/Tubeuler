@@ -1,3 +1,7 @@
+![Tubeuler](./brand/tubeluer-logo.png)
+
+### Making youtube-dl a little friendlier with Node and JSON
+
 ## Prerequisites
 
 * You must have (youtube-dl)[https://rg3.github.io/youtube-dl/download.html] installed on your system and have the `youtube-dl` command available from your terminal.
