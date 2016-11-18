@@ -1,4 +1,4 @@
-![Tubeuler](./brand/tubeluer-logo.png)
+![Tubeuler](./brand/tubeuler-logo.png)
 
 ### Making youtube-dl a little friendlier with Node and JSON
 
