@@ -48,13 +48,13 @@ The type can be set to:
 
 * `id`
   This is the part of the youtube URL for the video, playlist, channel, or channelID.
-  * For videos use this part of the URL: https://www.youtube.com/watch?v=`12345678901`
+  * For videos use this part of the URL: https://www.youtube.com/watch?v= `12345678901`
   * For `playlist` use this part of the URL:
-  https://www.youtube.com/playlist?list=`PL1234567890123456`
+  https://www.youtube.com/playlist?list= `PL1234567890123456`
   * For `channel` use this part of the URL:
-  https://www.youtube.com/user/`Username`
+  https://www.youtube.com/user/ `Username`
   * If a `channel` does not have a username use this part of the URL:
-  https://www.youtube.com/channel/`UC123456789012345678901`
+  https://www.youtube.com/channel/ `UC123456789012345678901`
 
 * `folder`
   This will create a folder inside of the `youtubeFolder` you set in `config.json`. Example: `"My Folder"`.
