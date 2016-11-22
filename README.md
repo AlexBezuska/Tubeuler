@@ -40,11 +40,11 @@ Setting this to false will hide errors about videos which were not downloaded du
 ## Settings in `download-list.json`
 
 * `type`
-The type can we set to:
-  * `"video"`
-  * `"playlist"`
-  * `"channel"`
-  * `"channelID"`
+The type can be set to:
+  * `"video"` - download a single video
+  * `"playlist"` - download all videos in a playlist
+  * `"channel"` - download all videos by a single user
+  * `"channelID"` same as channel but for users with IDs instead of channel names
 
 * `id`
   This is the part of the youtube URL for the video, playlist, channel, or channelID.
