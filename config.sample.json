@@ -1,0 +1,9 @@
+{
+  "youtubeFolder" : "/path/to/your/folder",
+  "downloadArchiveLocation" : "default",
+  "downloadArchiveName" : "downloaded.txt",
+  "showWarnings" : false,
+  "showErrors" : true,
+  "showSignInErrors" : false,
+  "showCopyrightErrors" : false
+}

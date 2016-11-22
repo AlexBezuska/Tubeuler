@@ -4,7 +4,10 @@
 
 ## To run
 
-* Be sure to have at least one video, channel, or playlist in your download-list.json
+* Duplicate config.sample.json and name is `config.json`.
+* Be sure the `youtubeFolder` is set to where you want to download to (absolute path from the root of your system).
+* Duplicate `download-list.sample.json` and name it `download-list.json`.
+* Be sure to have at least one video, channel, channelID, or playlist in your `download-list.json` (see Settings in `download-list.json` readme section below)
 * From the root directory of this project run `npm start`
 
 ## Settings in `config.json`
@@ -27,3 +30,32 @@ Setting this to false will hide errors about videos which were not downloaded du
 
 `showCopyrightErrors`
 Setting this to false will hide errors about videos which were not downloaded due to copyright.
+
+## Settings in `download-list.json`
+
+* `type`
+The type can we set to:
+  * `"video"`
+  * `"playlist"`
+  * `"channel"`
+  * `"channelID"`
+
+* `id`
+  This is the part of the youtube URL for the video, playlist, channel, or channelID.
+  * For videos use this part of the URL: https://www.youtube.com/watch?v=`12345678901`
+  * For `playlist` use this part of the URL:
+  https://www.youtube.com/playlist?list=`PL1234567890123456`
+  * For `channel` use this part of the URL:
+  https://www.youtube.com/user/`Username`
+  * If a `channel` does not have a username use this part of the URL:
+  https://www.youtube.com/channel/`UC123456789012345678901`
+
+* `folder`
+  This will create a folder inside of the `youtubeFolder` you set in `config.json`. Example: `"My Folder"`.
+  You can also create folder structures multiple levels deep such as `"My Folder/Sub Folder"`
+
+
+### Optional Settings
+
+`format`
+Currently the only special format option is `"mp3"`, the default if this is set to anything else or left out completely is `.mp4` or `.mkv`.
